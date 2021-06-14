@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Actividad</title>
+</head>
+<body>
+    <form>
+        Edad del usuario 1: <input type="text" id="edad1"><br><br>
+        Edad del usuario 2: <input type="text" id="edad2"><br><br>
+        Edad del usuario 3: <input type="text" id="edad3"><br><br>
+        <button id="boton" onclick="consultar()">Consultar</button> 
+    </form> 
+    <script>
+    var consultar = function(){
+        var array = [];
+        for(var i = 0; i < 3; i++){
+            array[i] = parseFloat(document.getElementById("edad"+(i+1)).value);
+        }
+        for(var i = 0; i < array.length; i++){
+            console.log(array[i]);
+        }
+        alert("El mayor tiene: "+elMayor(array)+" años");
+        function elMayor(array) {
+            return Math.max.apply(null, array);
+        }
+    }
+    </script>
+</body>
+</html>
